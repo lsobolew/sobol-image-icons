@@ -27,12 +27,17 @@ jobs:
           ./bin/wpx up latest
           ./bin/wpx build --edition=free --verify
 
+      - name: Resolve the SVN version
+        env:
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: echo "SVN_VERSION=${RELEASE_TAG#v}" >> "$GITHUB_ENV"
+
       - name: Publish
         uses: 10up/action-wordpress-plugin-deploy@stable
         env:
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
           SLUG: sobol-image-icons
-          VERSION: ${{ inputs.tag }}
+          VERSION: ${{ env.SVN_VERSION }}
           BUILD_DIR: .wplab/build/sobol-image-icons
           ASSETS_DIR: .wordpress-org
