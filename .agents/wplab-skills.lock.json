@@ -1,0 +1,22 @@
+{
+	"repo": "https://github.com/WordPress/agent-skills.git",
+	"ref": "trunk",
+	"commit": "ac16175f2ac2f14a6a1298f6fdd6b1d0e76e732b",
+	"committedAt": "2026-09-21T07:57:33+02:00",
+	"installedAt": "2026-09-21T11:14:53.688Z",
+	"targets": [
+		"codex",
+		"claude"
+	],
+	"skills": [
+		"wordpress-router",
+		"wp-project-triage",
+		"wp-plugin-development",
+		"wp-plugin-directory-guidelines",
+		"wp-block-development",
+		"wp-rest-api",
+		"wp-wpcli-and-ops",
+		"wp-phpstan",
+		"wp-performance"
+	]
+}
